@@ -8,11 +8,25 @@ client.on("ready", () => {
   client.user.setActivity(`a la grasa.`, { type: "WATCHING" })
 });
 
-let palabras = [
-  "pizza",
-  "grasa",
-  "kebab",
-  ", puto gordo"
-]
+client.on("message", async message => {
+  const args = message.content.slice(prefix.length).trim().split(/ +/g);
+  const command = args.shift().toLowerCase();
+  switch (command) {
+    case "decir":
+      switch (args) {
+        case undefined:
+          message.reply("tienes que introducir un valor.")
+          break;
+      
+        default:
+          message.channel.send(args)
+          break;
+      }      
+      break;
+  
+    default:
+      break;
+  }
+})
 
 client.login(process.env.TOKEN);
