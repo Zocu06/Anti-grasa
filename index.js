@@ -9,7 +9,8 @@ client.on("ready", () => {
 });
 
 client.on("message", async message => {
-  let prefix_db = "-"
+  if(message.author.bot) return; // if true ignore
+  prefix_db = "-"
   const args = message.content.slice(prefix_db.length).trim().split(/ +/g);
   const command = args.shift().toLowerCase();
   switch (command) {
@@ -17,10 +18,19 @@ client.on("message", async message => {
       if(!args) {
         message.reply("introduce un valor.")
       }
-      if(args) {
+      if(args != undefined || args != null) {
+        message.delete()
         message.channel.send(args)
       }
       break;
+      case "help":
+        let embed = new Discord.MessageEmbed()
+        .setTitle("Ayuda del bot")
+        .setDescription("Este mensaje te ayudará a entender el bot")
+        .addField(prefix_db + "decir", "Dice lo que tu dices. No es muy complicado xd")
+        .setColor(0xfff);
+        message.channel.send(embed)
+        break;
   
     default:
       break;
