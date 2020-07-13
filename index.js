@@ -12,6 +12,9 @@ let palabras = [
   "kebab",
   ", puto gordo"
 ]
+let grasa = [
+
+]
 setInterval(() => {
   client.user.setActivity(`a la ${palabras[Math.random() * palabras.length - 1]}.`, { type: "WATCHING" })
 }, 28000);
