@@ -3,6 +3,9 @@ const client = new Discord.Client();
 const db = require("megadb");
 const prefix_db = new db.crearDB("Prefixes");
 
+client.on("ready", () => {
+  console.log("Conectado como " + client.user.tag);
+});
 let palabras = [
   "pizza",
   "grasa",
@@ -12,10 +15,6 @@ let palabras = [
 setInterval(() => {
   client.user.setActivity(`a la ${palabras[Math.random() * palabras.length]}.`, { type: "WATCHING" })
 }, 28000);
-
-client.on("ready", () => {
-  console.log("Conectado como " + client.user.tag);
-});
 
 client.on("message", async msg => {
   let prefix;
@@ -41,7 +40,7 @@ client.on("message", async msg => {
 
   //Embed help
   if (command === "help") {
-    const embed = new Discord.MessageEmbed()
+    const embed = new Discord.RichEmbed()
 
       .setTitle("Ayuda del Anti-Grasa.")
       .setDescription(
@@ -63,7 +62,7 @@ client.on("message", async msg => {
 
   //Embed comandos
   if (command === "comandos") {
-    const embed = new Discord.MessageEmbed()
+    const embed = new Discord.RichEmbed()
 
       .setTitle("Comandos del Anti-Grasa.")
       .setDescription("Estos son mis comandos:")
@@ -83,7 +82,7 @@ client.on("message", async msg => {
   //Comando secreto lean
 
   if (command === "lean") {
-    const embed = new Discord.MessageEmbed()
+    const embed = new Discord.RichEmbed()
 
       .setTitle("Comandos del Anti-Grasa.")
       .setDescription("Estos son mis comandos")
@@ -97,7 +96,7 @@ client.on("message", async msg => {
   }
   //Embed soporte
   if (command === "support") {
-    const embed = new Discord.MessageEmbed()
+    const embed = new Discord.RichEmbed()
 
       .setTitle("Soporte del Anti-Grasa Bot.")
       .setDescription(`[Servidor de soporte](https://discord.gg/mvjFUyA)`)
@@ -109,7 +108,7 @@ client.on("message", async msg => {
   //Embed verificacion
   
     if (command === "verif") {
-    const embed = new Discord.MessageEmbed()
+    const embed = new Discord.RichEmbed()
 
       .setTitle("¡Bienvenid@ a la Secta Anti Grasa!")
       .setDescription("Para verificarte, debes reaccionar a este mensaje con ✅. Si la verificación no funciona, avisa a un miembro del staff conectado.")
@@ -123,7 +122,7 @@ client.on("message", async msg => {
   //Comando reportar fallos
   
       if (command === "reportar") {
-    const embed = new Discord.MessageEmbed()
+    const embed = new Discord.RichEmbed()
 
       .setTitle("Reportanos fallos del bot, sugerencias para mejorarlo y más cosas en nuestro servidor de soporte.")
       .setDescription(`[Secta Anti-Grasa](https://discord.gg/uzHM7Ch)`)
@@ -142,7 +141,7 @@ client.on("message", async msg => {
       );
     let permiso = msg.member.hasPermission("ADMINISTRATOR");
     if (!permiso) {
-      const embed = new Discord.MessageEmbed()
+      const embed = new Discord.RichEmbed()
 
         .setTitle(`${msg.author.username} No tienes los permisos suficientes`)
         .setColor("RANDOM")
@@ -159,7 +158,7 @@ client.on("message", async msg => {
     let razon = msg.content.slice(7);
 
     let img = msg.mentions.users.first();
-    const embed = new Discord.MessageEmbed()
+    const embed = new Discord.RichEmbed()
 
       .setTitle(
         `${msg.author.username} Estos son los nombres de los servidores donde estoy`
@@ -179,7 +178,7 @@ client.on("message", async msg => {
   }
   //Embed invite
   if (command === "invite") {
-    const embed = new Discord.MessageEmbed()
+    const embed = new Discord.RichEmbed()
 
       .setTitle("Invitame a tu servidor y acabaremos juntos con la grasa :D")
       .setDescription(
@@ -204,11 +203,11 @@ client.on("message", async msg => {
     let id = mencionado.id;
     let texto = args.slice(1).join(" ");
     if (!texto) return msg.channel.send(`Escriba el contenido a enviar.`);
-    client.users.cache.get(id).send(texto);
+    client.users.get(id).send(texto);
   }
   //Embed info
   if (command === "info") {
-    const embed = new Discord.MessageEmbed()
+    const embed = new Discord.RichEmbed()
 
       .setTitle("Información del bot")
       .setDescription(
@@ -222,7 +221,7 @@ client.on("message", async msg => {
 
   //Comando secreto funar
   if (command === "funar") {
-    const embed = new Discord.MessageEmbed()
+    const embed = new Discord.RichEmbed()
 
       .setTitle("Información del bot")
       .setDescription(
@@ -280,7 +279,7 @@ client.on("message", async msg => {
     msg.content.toLowerCase().includes(";v") ||
     msg.content.toLowerCase().includes(":u") ||
     msg.content.toLowercase().includes(":u")() ||
-    msg.content.toLowerCase().includes("HOKA")
+    msg.content.toLowerCase().includes("HO")
   ) {
     msg.delete().then(() => {
       msg.reply(msgs[index]);
