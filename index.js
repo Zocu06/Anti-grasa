@@ -14,15 +14,7 @@ client.on("message", async message => {
   const command = args.shift().toLowerCase();
   switch (command) {
     case "decir":
-      switch (args) {
-        case undefined:
-          message.reply("tienes que introducir un valor.")
-          break;
-      
-        default:
-          message.channel.send(args)
-          break;
-      }      
+      message.reply("dsds")     
       break;
   
     default:
