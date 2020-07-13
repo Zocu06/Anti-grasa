@@ -12,9 +12,9 @@ client.on("message", async message => {
   prefix_db = "-"
   const args = message.content.slice(prefix_db.length).trim().split(/ +/g);
   const command = args.shift().toLowerCase();
-  switch (command) {
+  switch (message.content) {
     case "decir":
-      message.reply("dsds")     
+      message.reply("dsds")
       break;
   
     default:
