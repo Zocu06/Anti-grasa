@@ -1,0 +1,24 @@
+{
+  "name": "anti-grasa",
+  "version": "1.0.0",
+  "description": "eee",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SMLVG/Anti-grasa.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SMLVG/Anti-grasa/issues"
+  },
+  "homepage": "https://github.com/SMLVG/Anti-grasa#readme",
+  "dependencies": {
+    "discord.js": "^12.2.0",
+    "sqlite3": "^5.0.0"
+  }
+}
