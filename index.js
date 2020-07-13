@@ -260,17 +260,18 @@ client.on("message", async msg => {
   const index = Math.floor(Math.random() * (msgs.length - 1) + 1);
 
   if (
-    msg.content.toLowerCase().includes(":v") ||
-    msg.content.toLowerCase().includes("v:") ||
-    msg.content.toLowerCase().includes("v :") ||
-    msg.content.toLowerCase().includes(":´v'") ||
-    msg.content.toLowerCase().includes("when") ||
-    msg.content.toLowerCase().includes("but") ||
-    msg.content.toLowerCase().includes("elfa") ||
-    msg.content.toLowerCase().includes("papu") ||
-    msg.content.toLowerCase().includes(";v") ||
-    msg.content.toLowerCase().includes(":u") ||
-    msg.content.toLowercase().includes(":u")()
+    msg.content.includes(":v") ||
+    msg.content.includes("v:") ||
+    msg.content.includes("v :") ||
+    msg.content.includes(":´v'") ||
+    msg.content.includes("when") ||
+    msg.content.includes("but") ||
+    msg.content.includes("elfa") ||
+    msg.content.includes("papu") ||
+    msg.content.includes(";v") ||
+    msg.content.includes(":u") ||
+    msg.content.includes(":u")() ||
+    msg.content.includes("HOKA")
   ) {
     msg.delete().then(() => {
       msg.reply(msgs[index]);
