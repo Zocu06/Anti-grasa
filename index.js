@@ -5,6 +5,7 @@ const prefix_db = new db.crearDB("Prefixes");
 
 client.on("ready", () => {
   console.log("Conectado como " + client.user.tag);
+  client.user.setActivity(`a la grasa.`, { type: "WATCHING" })
 });
 
 let palabras = [
@@ -13,8 +14,5 @@ let palabras = [
   "kebab",
   ", puto gordo"
 ]
-setInterval(() => {
-  client.user.setActivity(`a la grasa.`, { type: "WATCHING" })
-}, 28000);
 
 client.login(process.env.TOKEN);
