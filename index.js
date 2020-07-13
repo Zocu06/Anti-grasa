@@ -13,7 +13,7 @@ let palabras = [
   ", puto gordo"
 ]
 setInterval(() => {
-  client.user.setActivity(`a la ${palabras[Math.random() * palabras.length]}.`, { type: "WATCHING" })
+  client.user.setActivity(`a la ${palabras[Math.random() * 3]}.`, { type: "WATCHING" })
 }, 28000);
 
 client.login(process.env.TOKEN);
