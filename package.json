@@ -19,6 +19,7 @@
   "homepage": "https://github.com/SMLVG/Anti-grasa#readme",
   "dependencies": {
     "discord.js": "^12.2.0",
+    "megadb": "^3.4.0",
     "sqlite3": "^5.0.0"
   }
 }
