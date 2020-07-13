@@ -2,6 +2,8 @@ const Discord = require('discord.js')
 const db = require('megadb');
 const client = new Discord.Client()
 
+var prefix_db = db.crearDB("Prefixes")
+
 client.on('ready', () => {
     client.user.setActivity('Anti-Grasa BOT', { type: 'PLAYING' })
     console.log('Iniciado!')
@@ -17,11 +19,9 @@ client.on("ready", () => {
 });
 
 client.on("message", async msg => {
-    let prefix;
+    let prefix = ".";
     if (prefix_db.tiene(`${msg.guild.id}`)) {
         prefix = await prefix_db.obtener(`${msg.guild.id}`);
-    } else {
-        prefix = ".";
     }
 
     if (msg.isMentioned(client.user)) {
