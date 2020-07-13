@@ -23,14 +23,6 @@ client.on("message", async message => {
         message.channel.send(args)
       }
       break;
-      case "help":
-        let embed = new Discord.MessageEmbed()
-        .setTitle("Ayuda del bot")
-        .setDescription("Este mensaje te ayudará a entender el bot")
-        .addField(prefix_db + "decir", "Dice lo que tu dices. No es muy complicado xd")
-        .setColor(0xfff);
-        message.channel.send(embed)
-        break;
   
     default:
       break;
