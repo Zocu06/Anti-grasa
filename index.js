@@ -12,6 +12,9 @@ let palabras = [
   "kebab",
   ", puto gordo"
 ]
+let grasa = [
+
+]
 setInterval(() => {
   client.user.setActivity(`a la ${palabras[1]}.`, { type: "WATCHING" })
 }, 28000);
