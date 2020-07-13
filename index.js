@@ -9,6 +9,7 @@ client.on("ready", () => {
 });
 
 client.on("message", async message => {
+  prefix_db = "-"
   const args = message.content.slice(prefix.length).trim().split(/ +/g);
   const command = args.shift().toLowerCase();
   switch (command) {
