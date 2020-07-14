@@ -33,14 +33,13 @@ client.on("message", message => {
       message.channel.send(embed)
       break;
     case "settings":
-      if(!args) {
+      if(args !== "" || args !== " ") {
         let embed = new Discord.MessageEmbed()
         .setTitle("Ajustes de el pachacho")
         .addField("SETPREFIX", "Mete un valor para prefix")
         .setColor("RANDOM");
         message.channel.send(embed)
       }
-      message.reply(args)
       break;
   
     default:
