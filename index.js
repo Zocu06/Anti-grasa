@@ -10,7 +10,7 @@ client.on("ready", () => {
 
 client.on("message", message => {
   if(message.author.bot) return; // if true ignore
-  prefix_db = "-"
+  if(prefix_db != null) prefix_db = "-"
   const args = message.content.slice(prefix_db.length).trim().split(/ +/g);
   const command = args.shift().toLowerCase();
   switch (command) {
