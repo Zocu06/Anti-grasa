@@ -37,7 +37,7 @@ client.on("message", message => {
         let embed = new Discord.MessageEmbed()
         .setTitle("Ajustes de el pachacho")
         .addField("SETPREFIX", "Mete un valor para prefix")
-        .setColor("RANDOM")
+        .setColor("RANDOM");
         message.channel.send(embed)
       }
       break;
