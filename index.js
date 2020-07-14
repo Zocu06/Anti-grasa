@@ -33,7 +33,7 @@ client.on("message", message => {
       message.channel.send(embed)
       break;
     case "settings":
-      if(args !== "" || args !== " ") {
+      if(args !== null) {
         let embed = new Discord.MessageEmbed()
         .setTitle("Ajustes de el pachacho")
         .addField("SETPREFIX", "Mete un valor para prefix")
