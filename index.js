@@ -8,7 +8,7 @@ client.on("ready", () => {
   client.user.setActivity(`a la chicha.`, { type: "WATCHING" })
 });
 
-client.on("message", message => {
+client.on("message", async message => {
   if (message.author.bot) return; // if true ignore
   let prefix;
   if (prefix_db.tiene(`${msg.guild.id}`)) {
