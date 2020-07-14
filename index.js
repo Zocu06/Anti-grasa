@@ -5,7 +5,7 @@ const prefix_db = new db.crearDB("Prefixes");
 
 client.on("ready", () => {
   console.log("Conectado como " + client.user.tag);
-  client.user.setActivity(`a la grasa.`, { type: "WATCHING" })
+  client.user.setActivity(`a la chicha.`, { type: "WATCHING" })
 });
 
 client.on("message", async message => {
