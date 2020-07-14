@@ -30,6 +30,7 @@ client.on("message", message => {
       .addField("DECIR", "Dice tu frase")
       .addField("SETTINGS", "Confiugra los ajustes del servidor.")
       .setColor("RANDOM");
+      message.channel.send(embed)
       break;
   
     default:
