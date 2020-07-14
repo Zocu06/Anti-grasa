@@ -38,6 +38,7 @@ client.on("message", message => {
         .setTitle("Ajustes de el pachacho")
         .addField("SETPREFIX", "Mete un valor para prefix")
         .setColor("RANDOM")
+        message.channel.send(embed)
       }
       break;
   
