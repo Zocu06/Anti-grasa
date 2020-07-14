@@ -40,6 +40,18 @@ client.on("message", message => {
         .setColor("RANDOM");
         message.channel.send(embed)
       }
+      switch (args[0]) {
+        case "setprefix":
+          if(args[1] != "" || args[1] != " ") {
+            prefix_db.set(args[1])
+          } else {
+            message.reply("pon un prefix válido.")
+          }
+          break;
+      
+        default:
+          break;
+      }
       break;
   
     default:
