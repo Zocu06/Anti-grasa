@@ -11,8 +11,8 @@ client.on("ready", () => {
 client.on("message", async message => {
   if (message.author.bot) return; // if true ignore
   let prefix;
-  if (prefix_db.tiene(`${msg.guild.id}`)) {
-    prefix = await prefix_db.obtener(`${msg.guild.id}`);
+  if (prefix_db.tiene(`${message.guild.id}`)) {
+    prefix = await prefix_db.obtener(`${message.guild.id}`);
   } else {
     prefix = ".";
   }
