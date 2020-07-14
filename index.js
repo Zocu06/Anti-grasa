@@ -55,7 +55,6 @@ client.on("message", message => {
       break;
   
     default:
-      console.log(prefix_db)
       break;
   }
 })
