@@ -8,7 +8,7 @@ client.on("ready", () => {
   client.user.setActivity(`a la chicha.`, { type: "WATCHING" })
 });
 
-client.on("message", async message => {
+client.on("message", message => {
   if(message.author.bot) return; // if true ignore
   prefix_db = "-"
   const args = message.content.slice(prefix_db.length).trim().split(/ +/g);
