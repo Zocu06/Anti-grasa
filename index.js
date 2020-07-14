@@ -40,6 +40,7 @@ client.on("message", message => {
         .setColor("RANDOM");
         message.channel.send(embed)
       }
+      message.reply("hola.")
       break;
   
     default:
